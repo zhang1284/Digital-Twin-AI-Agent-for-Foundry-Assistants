@@ -1,0 +1,4 @@
+process,lot_id,defects,inspected_area_cm2,source_kind
+demo_mature,SYNTHETIC-001,13,100,synthetic
+demo_mature,SYNTHETIC-002,18,120,synthetic
+demo_mature,SYNTHETIC-003,9,80,synthetic

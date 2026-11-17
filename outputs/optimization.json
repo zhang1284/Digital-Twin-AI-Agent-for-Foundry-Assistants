@@ -1,0 +1,207 @@
+{
+  "notice": "Industry twin simulation using syntheic assumptions and data. Results are not validated foundry predictions, processing design rules, or manufacturing instructions.",
+  "objective": "Lowest cost per good die among feasible grid candidates",
+  "evaluated": 100,
+  "feasible_count": 0,
+  "rejection_counts": {
+    "Yield fraction": 100,
+    "Cost per good die USD": 100,
+    "Frequency at voltage (surrogate)": 8
+  },
+  "baseline": {
+    "model_version": "1.0.0",
+    "notice": "Industry twin simulation using syntheic assumptions and data. Results are not validated foundry predictions, processing design rules, or manufacturing instructions.",
+    "scenario": {
+      "design": {
+        "name": "Intel AI Accelerator Panther Lake 18A-P CPU",
+        "compute_units": 32,
+        "ops_per_cycle_per_unit": 512,
+        "frequency_ghz": 1.5,
+        "voltage_v": 0.85,
+        "workload_utilization": 0.7,
+        "fixed_area_mm2": 90.0,
+        "area_per_unit_mm2": 1.4,
+        "thermal_resistance_c_per_w": 0.32,
+        "ambient_c": 25.0
+      },
+      "process": {
+        "key": "demo_mature",
+        "area_scale": 1.0,
+        "dynamic_power_coefficient": 0.65,
+        "leakage_w_per_mm2": 0.03,
+        "min_voltage_v": 0.65,
+        "max_voltage_v": 1.05,
+        "max_frequency_ghz": 3.2,
+        "max_die_area_mm2": 850.0,
+        "wafer_diameter_mm": 300.0,
+        "edge_exclusion_mm": 20.0,
+        "scribe_lane_mm": 0.1,
+        "defect_density_per_cm2": 0.12,
+        "parametric_yield": 0.1,
+        "wafer_cost_usd": 10000.0,
+        "test_cost_per_gross_die_usd": 3.0,
+        "packaging_per_good_die_usd": 18.0,
+        "provenance": "Synthetic teaching assumption; not an Intel process."
+      },
+      "goals": {
+        "min_tops": 80,
+        "max_power_w": 180,
+        "max_junction_c": 95,
+        "min_yield": 0.6,
+        "max_cost_per_good_die_usd": 180,
+        "max_lot_days": 30
+      },
+      "stages": [
+        {
+          "name": "deposition",
+          "hours_per_visit": 0.35,
+          "visits_per_wafer": 20,
+          "parallel_tools": 6,
+          "availability": 0.85
+        },
+        {
+          "name": "lithogrophy",
+          "hours_per_visit": 0.55,
+          "visits_per_wafer": 18,
+          "parallel_tools": 4,
+          "availability": 0.85
+        },
+        {
+          "name": "etch",
+          "hours_per_visit": 0.3,
+          "visits_per_wafer": 20,
+          "parallel_tools": 5,
+          "availability": 0.85
+        },
+        {
+          "name": "metrology",
+          "hours_per_visit": 0.25,
+          "visits_per_wafer": 12,
+          "parallel_tools": 3,
+          "availability": 0.85
+        },
+        {
+          "name": "electrical_test",
+          "hours_per_visit": 0.4,
+          "visits_per_wafer": 1,
+          "parallel_tools": 2,
+          "availability": 0.85
+        }
+      ],
+      "wafers": 25,
+      "seed": 42
+    },
+    "process": "demo_mature",
+    "provenance": "Synthetic teaching assumption; not an Intel process.",
+    "metrics": {
+      "area_mm2": 134.8,
+      "performance_tops": 24576.0,
+      "power_w": 26.586,
+      "junction_c": 33.50752,
+      "allowed_frequency_ghz": 2.2399999999999998,
+      "gross_dies_per_wafer": 337,
+      "yield_fraction": 0.0850645334923989,
+      "expected_good_dies_per_wafer": 28.66674778693843,
+      "expected_good_dies_in_lot": 716.6686946734608,
+      "cost_per_good_die_usd": 402.103564235389,
+      "wafer_capacity_per_day": 8.242424242424242,
+      "good_die_capacity_per_day": 236.2834969105228,
+      "lot_days": 4.200980392156863
+    },
+    "stage_capacity_wafers_per_day": {
+      "deposition": 17.485714285714284,
+      "lithogrophy": 8.242424242424242,
+      "etch": 17.0,
+      "metrology": 20.4,
+      "electrical_test": 101.99999999999999
+    },
+    "bottleneck": "lithogrophy",
+    "checks": [
+      {
+        "name": "Voltage floor",
+        "observed": 0.85,
+        "relation": ">=",
+        "limit": 0.65,
+        "passed": true
+      },
+      {
+        "name": "Voltage ceiling",
+        "observed": 0.85,
+        "relation": "<=",
+        "limit": 1.05,
+        "passed": true
+      },
+      {
+        "name": "Frequency at voltage (surrogate)",
+        "observed": 1.5,
+        "relation": "<=",
+        "limit": 2.2399999999999998,
+        "passed": true
+      },
+      {
+        "name": "Die area mm2",
+        "observed": 134.8,
+        "relation": "<=",
+        "limit": 850.0,
+        "passed": true
+      },
+      {
+        "name": "Gross die per wafer",
+        "observed": 337,
+        "relation": ">=",
+        "limit": 1,
+        "passed": true
+      },
+      {
+        "name": "Performance TOPS",
+        "observed": 24576.0,
+        "relation": ">=",
+        "limit": 80,
+        "passed": true
+      },
+      {
+        "name": "Power W",
+        "observed": 26.586,
+        "relation": "<=",
+        "limit": 180,
+        "passed": true
+      },
+      {
+        "name": "Junction temperature °C",
+        "observed": 33.50752,
+        "relation": "<=",
+        "limit": 95,
+        "passed": true
+      },
+      {
+        "name": "Yield fraction",
+        "observed": 0.0850645334923989,
+        "relation": ">=",
+        "limit": 0.6,
+        "passed": false
+      },
+      {
+        "name": "Cost per good die USD",
+        "observed": 402.103564235389,
+        "relation": "<=",
+        "limit": 180,
+        "passed": false
+      },
+      {
+        "name": "Lot duration days",
+        "observed": 4.200980392156863,
+        "relation": "<=",
+        "limit": 30,
+        "passed": true
+      }
+    ],
+    "feasible": false,
+    "violations": [
+      "Yield fraction",
+      "Cost per good die USD"
+    ]
+  },
+  "best": null,
+  "top_candidates": [],
+  "status": "no_feasible_grid_solution"
+}

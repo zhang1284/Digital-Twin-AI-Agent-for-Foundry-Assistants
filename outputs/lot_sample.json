@@ -1,0 +1,134 @@
+{
+  "notice": "Industry twin simulation using syntheic assumptions and data. Results are not validated foundry predictions, processing design rules, or manufacturing instructions.",
+  "seed": 42,
+  "wafers": [
+    {
+      "wafer": 1,
+      "gross_dies": 337,
+      "good_dies": 27
+    },
+    {
+      "wafer": 2,
+      "gross_dies": 337,
+      "good_dies": 27
+    },
+    {
+      "wafer": 3,
+      "gross_dies": 337,
+      "good_dies": 18
+    },
+    {
+      "wafer": 4,
+      "gross_dies": 337,
+      "good_dies": 32
+    },
+    {
+      "wafer": 5,
+      "gross_dies": 337,
+      "good_dies": 30
+    },
+    {
+      "wafer": 6,
+      "gross_dies": 337,
+      "good_dies": 25
+    },
+    {
+      "wafer": 7,
+      "gross_dies": 337,
+      "good_dies": 27
+    },
+    {
+      "wafer": 8,
+      "gross_dies": 337,
+      "good_dies": 29
+    },
+    {
+      "wafer": 9,
+      "gross_dies": 337,
+      "good_dies": 30
+    },
+    {
+      "wafer": 10,
+      "gross_dies": 337,
+      "good_dies": 23
+    },
+    {
+      "wafer": 11,
+      "gross_dies": 337,
+      "good_dies": 20
+    },
+    {
+      "wafer": 12,
+      "gross_dies": 337,
+      "good_dies": 26
+    },
+    {
+      "wafer": 13,
+      "gross_dies": 337,
+      "good_dies": 29
+    },
+    {
+      "wafer": 14,
+      "gross_dies": 337,
+      "good_dies": 33
+    },
+    {
+      "wafer": 15,
+      "gross_dies": 337,
+      "good_dies": 25
+    },
+    {
+      "wafer": 16,
+      "gross_dies": 337,
+      "good_dies": 26
+    },
+    {
+      "wafer": 17,
+      "gross_dies": 337,
+      "good_dies": 30
+    },
+    {
+      "wafer": 18,
+      "gross_dies": 337,
+      "good_dies": 27
+    },
+    {
+      "wafer": 19,
+      "gross_dies": 337,
+      "good_dies": 25
+    },
+    {
+      "wafer": 20,
+      "gross_dies": 337,
+      "good_dies": 26
+    },
+    {
+      "wafer": 21,
+      "gross_dies": 337,
+      "good_dies": 27
+    },
+    {
+      "wafer": 22,
+      "gross_dies": 337,
+      "good_dies": 34
+    },
+    {
+      "wafer": 23,
+      "gross_dies": 337,
+      "good_dies": 37
+    },
+    {
+      "wafer": 24,
+      "gross_dies": 337,
+      "good_dies": 25
+    },
+    {
+      "wafer": 25,
+      "gross_dies": 337,
+      "good_dies": 21
+    }
+  ],
+  "sampled_good_dies": 679,
+  "expected_good_dies": 716.6686946734607,
+  "binomial_standard_deviation": 25.606749237114347
+}
